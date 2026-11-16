@@ -6,6 +6,7 @@ h1{font-size:1.9rem;line-height:1.2}
 h2{font-size:1.3rem;margin-top:2.2rem}
 h3{font-size:1.1rem;margin-top:1.6rem}
 a{color:var(--link)}
+p,li,td,th{overflow-wrap:anywhere}
 code{font-size:.88em;background:var(--panel);padding:0 .25em;border-radius:3px;overflow-wrap:anywhere}
 pre{background:var(--panel);padding:.8rem;overflow-x:auto;border-radius:4px}
 pre code{background:none;padding:0}

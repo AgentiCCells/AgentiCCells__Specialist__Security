@@ -9,7 +9,7 @@ const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, 
 // Links to sibling .md files point at their rendered .html page.
 function href(u) {
   if (/^(https?:|mailto:|#)/.test(u)) return u;
-  return u.replace(/\.md(#|$)/, '.html$1');
+  return u.replace(/(^|\/)README\.md(#|$)/, '$1index.html$2').replace(/\.md(#|$)/, '.html$1');
 }
 
 function inline(text) {

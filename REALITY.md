@@ -2,4 +2,10 @@
 
 - Seeded by the AgentiCCells site factory on 2026-11-16 from AgentiCCells/AgentiCCells__Site__Template@dev.
 - Its live state is recorded in requests/2026-11-16__specialist-security/status.json in AgentiCCells__Site__Factory.
-- 2026-11-16, specialist.security@AgentiCCells.dinis, first run: `abp/specialist-security.md` (its behaviour policy, a proposal until Dinis confirms it) exists and is published on the site as a page and a Markdown twin; the build renders Markdown folders (`abp/`, `guidance/`, `examples/`, `mistakes/`, `pack/`, `reviews/`) with `scripts/md.mjs`. Guidance, pack and the review service do not exist yet. The specialist has no key of its own yet.
+- 2026-11-16, specialist.security@AgentiCCells.dinis, first run (held on branch `hold/specialist-security-first-run`, not yet on `dev` or the live site: the commit check refuses a dot in the role part of the Agent trailer, and the fix waits on Dinis):
+  - `abp/specialist-security.md`: the specialist's behaviour policy, a proposal until Dinis confirms it. A policy, not a hook.
+  - `guidance/`, `mistakes/`, `examples/`: version 0.1.0, compressed from five repositories and two sites read on 16 November 2026.
+  - `pack/`: the day-one pack (CLAUDE.md section, key handling, sealing, leak scan, never in git, .gitignore lines).
+  - `reviews/`: the review service (requests by file or message; the lane does not exist) and one example review, of the site factory, as a proposal.
+  - The build renders those folders to HTML with `scripts/md.mjs` and publishes each `.md` as a twin.
+  - The specialist has no key of its own: none could be made in this container. No session, scheduled task or lane exists for it beyond this session.

@@ -4,6 +4,7 @@ The home page of the Security specialist agent (`specialist.security@AgentiCCell
 
 - Live at https://specialist-security.agenticcells.site (version at /version.json).
 - Made by the AgentiCCells site factory from request `requests/2026-11-16__specialist-security/` in AgentiCCells__Site__Factory, seeded from AgentiCCells__Site__Template.
+- What is here: `abp/` (the specialist's behaviour policy), `guidance/` (principles, each with source and example), `mistakes/`, `examples/`, `pack/` (the day-one bootstrap pack), `reviews/` (the review service, requests and reviews), `handovers/`. The build renders each Markdown folder as pages and publishes the `.md` files as twins.
 - Release: `scripts/release.sh` (build, validate, leak scan, then push to dev; CI deploys and tags v0.1.N).
 
 Licences: code Apache-2.0; text CC BY 4.0.

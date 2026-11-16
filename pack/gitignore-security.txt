@@ -1,0 +1,15 @@
+# Security lines for .gitignore (day-one pack, specialist.security@AgentiCCells.dinis, 2026-11-16)
+.sg_vault/local/
+.sg-send/
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+*.vault-key
+secrets/
+transcripts/
+session-archive/
