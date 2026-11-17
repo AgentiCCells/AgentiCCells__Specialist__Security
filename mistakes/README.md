@@ -1,6 +1,6 @@
 ---
 title: "Mistakes: what went wrong before, and why"
-description: "The leaks and near misses of November 2026 across our teams: what leaked (by kind), how it was found, how it was fixed, why it happened, and the rule that followed."
+description: "The leaks and near misses of November 2026 across our teams: what leaked, how it was found and fixed, why, and the rule that followed."
 ---
 # Mistakes: what went wrong before, and why
 

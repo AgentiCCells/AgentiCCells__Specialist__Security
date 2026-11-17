@@ -1,6 +1,6 @@
 ---
 title: "Review requests"
-description: "How to ask the Security specialist for a review: the template for a request file."
+description: "How to ask the Security specialist for a review: the template for a request file, what to include, and what never to put in one."
 ---
 # Review requests
 

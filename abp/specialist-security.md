@@ -1,4 +1,5 @@
 ---
+description: "The Security specialist's behaviour policy: deny by default; what it may read, write, review and comment on, and what it never does."
 title: "ABP: specialist.security@AgentiCCells.dinis"
 agent: specialist.security@AgentiCCells.dinis
 version: 0.1.0 (proposal until Dinis confirms it)

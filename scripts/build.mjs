@@ -16,13 +16,33 @@ for (const f of walk('_site')) {
 // twice: the .md file as it is (the twin agents read) and a rendered .html page for people.
 // README.md in a folder becomes that folder's index.html. Added by specialist.security@, 2026-11-16.
 const DOCS = ['abp', 'guidance', 'examples', 'mistakes', 'pack', 'reviews'];
-const page = (title, description, depth, body, mdName) => `<!doctype html>
+// Link previews (the cells@ roll-out, at Dinis's word, 17 Nov 2026): every page carries canonical,
+// Open Graph and Twitter tags with absolute https URLs and the site's 1200x630 share card.
+const SITE = JSON.parse(readFileSync('hub.json', 'utf8')).live_address.replace(/\/?$/, '/');
+const CARD = 'assets/share/specialist-security-1200x630.jpg';
+const share = (url, title, description) => [
+  `<link rel="canonical" href="${url}">`,
+  '<meta property="og:type" content="website">',
+  '<meta property="og:site_name" content="Specialist: Security">',
+  '<meta property="og:locale" content="en_GB">',
+  `<meta property="og:url" content="${url}">`,
+  `<meta property="og:title" content="${title}">`,
+  `<meta property="og:description" content="${description}">`,
+  `<meta property="og:image" content="${SITE}${CARD}">`,
+  '<meta property="og:image:type" content="image/jpeg">',
+  '<meta property="og:image:width" content="1200">',
+  '<meta property="og:image:height" content="630">',
+  '<meta property="og:image:alt" content="Specialist: Security. Reviews, keys, secrets and leak scans for every AgentiCCells team, with a padlock.">',
+  '<meta name="twitter:card" content="summary_large_image">',
+].join('\n');
+const page = (title, description, depth, body, mdName, url) => `<!doctype html>
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${title} · Specialist: Security</title>
 <meta name="description" content="${description}">
+${share(url, title, description)}
 <link rel="stylesheet" href="${'../'.repeat(depth)}style.css">
 </head>
 <body>
@@ -48,10 +68,11 @@ for (const dir of DOCS) {
     const h1 = body.match(/^#\s+(.+)$/m);
     const title = (meta.title || (h1 && h1[1]) || basename(f, '.md')).replace(/[`*]/g, '');
     const firstPara = body.split('\n\n').map((p) => p.trim()).find((p) => p && !/^[#|>`-]/.test(p)) || title;
-    const description = escAttr((meta.description || firstPara).replace(/[`*\[\]]/g, '').replace(/\(([^)]+)\)/g, '').replace(/\s+/g, ' ').slice(0, 200));
+    const description = escAttr((meta.description || firstPara).replace(/[`*\[\]]/g, '').replace(/\(([^)]+)\)/g, '').replace(/\s+/g, ' '));
     const depth = f.split('/').length - 1;
-    const html = page(escAttr(title), description, depth, render(body), basename(f));
     const target = basename(f) === 'README.md' ? join(dirname(out), 'index.html') : out.replace(/\.md$/, '.html');
+    const url = SITE + target.slice('_site/'.length).replace(/(^|\/)index\.html$/, '$1');
+    const html = page(escAttr(title), description, depth, render(body), basename(f), url);
     writeFileSync(target, html);
   }
 }

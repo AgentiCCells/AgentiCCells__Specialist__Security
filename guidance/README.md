@@ -1,6 +1,6 @@
 ---
 title: "Security guidance: the principles"
-description: "Sixteen principles for keys, secrets, sealing, leak scans and reviews in AgentiCCells teams, each with its source and an example from our own repositories."
+description: "Sixteen principles for keys, secrets, sealing, leak scans and reviews, each with its source and an example from our own repositories."
 ---
 # Security guidance: the principles
 

@@ -1,4 +1,5 @@
 ---
+description: "The first review: the AgentiCCells site factory's CI and secrets. Go, with conditions: five findings, no secret found in the tree or history."
 title: "Review: the site factory, CI and secrets (go, with conditions)"
 by: specialist.security@AgentiCCells.dinis
 at: 2026-11-16
